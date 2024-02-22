@@ -1,0 +1,11 @@
+(LoginPage)
+send username -> send password -> login button click 
+
+(DashboardPage)
+
+
+(SearchPage)
+saree -> search -> scrolldown -> selectone -> back to main search page 
+
+(CancelOderPage)
+help&support -> helpcenter -> cancelorder -> write -> 

@@ -24,7 +24,7 @@ public class DashboardPage extends CommonMethods{
      @FindBy(xpath = "//span[contains(text(),'Abayas & Long Dresses')]")
      WebElement fashion3;
      
-     @FindBy(xpath = "//body/div[@id='root']/div[1]/div[4]/div[1]/div[1]/div[1]/div[3]/div[3]/div[1]/a[1]")
+     @FindBy(xpath = "//body/div[@id='root']/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/div[11]")
      WebElement fashion4;
      
      @FindBy(xpath = "//body/div[@id='container']/div[@id='root']/div[@id='block-_4sUzDww8j']/div[@id='block-TcoRtQ-uf9']/div[@id='block-nInSf-_rzA']/div[@id='block-W4qa6DVWM4']/div[@id='module_add_to_cart']/div[1]/button[2]")
@@ -32,9 +32,6 @@ public class DashboardPage extends CommonMethods{
      
      @FindBy(xpath = "//button[contains(text(),'GO TO CART')]")
      WebElement gotocart;
-     
-     @FindBy(className = "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/button[1]")
-     WebElement payment;
      
      public void fashion() throws InterruptedException {
     	 timeout();
@@ -72,6 +69,7 @@ public class DashboardPage extends CommonMethods{
 	    try {
 		if(fashion4.isDisplayed()) {
 			fashion4.click();
+			hover.moveToElement(fashion3).perform();
 			timeout();
 		     } 
 	     }
@@ -82,6 +80,7 @@ public class DashboardPage extends CommonMethods{
 		if(cart.isDisplayed()) {
 			cart.click();
 			timeout();
+			
 		     } 
 	     }
 	    catch(Exception e) {
@@ -91,19 +90,16 @@ public class DashboardPage extends CommonMethods{
 		if(gotocart.isDisplayed()) {
 			gotocart.click();
 			timeout();
+			PageDriver.getCurrentDriver().navigate().back();
+			timeout();
+			PageDriver.getCurrentDriver().navigate().back();
+			timeout();
+			PageDriver.getCurrentDriver().navigate().back();
+			timeout();
 		     } 
 	     }
 	    catch(Exception e) {
 		System.out.println("Something went wrong");
 	 } 
-	    try {
-		if(payment.isDisplayed()) {
-			payment.click();
-			timeout(2000);
-		     } 
-	     }
-	    catch(Exception e) {
-		System.out.println("Something went wrong");
-	 }
    }
 }
