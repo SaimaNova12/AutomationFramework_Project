@@ -5,7 +5,9 @@
     <classes>
       <class name="project.tests.LoginTest">
         <methods>
+          <include name="loginTest"/>
           <include name="start"/>
+          <include name="afterclass"/>
           <include name="close"/>
           <include name="DashboardTest"/>
           <include name="openUrl"/>
